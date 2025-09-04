@@ -46,7 +46,7 @@ public class RepairOrderActivity extends AppCompatActivity {
             return insets;
         });
 
-        TextView totalTV = findViewById(R.id.textView13);
+        TextView totalTV = findViewById(R.id.totalNum);
         subtotalTV = findViewById(R.id.subtotalNum);
         submitB = findViewById(R.id.button); //has to be after the onCreate
         submitB.setOnClickListener(buttonListener); //tie button listener to button

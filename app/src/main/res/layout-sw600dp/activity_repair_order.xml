@@ -180,7 +180,7 @@
         tools:layout_editor_absoluteY="631dp" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/taxText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Tax"
@@ -188,7 +188,7 @@
         tools:layout_editor_absoluteY="639dp" />
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/taxNum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
@@ -196,7 +196,7 @@
         tools:layout_editor_absoluteY="639dp" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/totalText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Total"
@@ -204,7 +204,7 @@
         tools:layout_editor_absoluteY="679dp" />
 
     <TextView
-        android:id="@+id/textView13"
+        android:id="@+id/totalNum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
