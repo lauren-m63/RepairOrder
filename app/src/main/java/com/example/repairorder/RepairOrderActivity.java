@@ -2,6 +2,8 @@ package com.example.repairorder;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -16,7 +18,20 @@ public class RepairOrderActivity extends AppCompatActivity {
 //xml is the UI frontend , java is the logic backend
 
     double numbers = 0.00;
+    Button submitB;
 
+    TextView subtotalTV;
+
+    //creating anonymous listener for submitB button - creates onClick method
+    View.OnClickListener buttonListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Random gen = new Random();
+            double number = gen.nextDouble();
+            String v2 = "$" + number;
+            subtotalTV.setText(v2);
+        }
+    };
 
 
     @Override
@@ -29,11 +44,13 @@ public class RepairOrderActivity extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
-
-
         });
 
-        TextView totalTV = findViewById(R.id.textView11);
+        TextView totalTV = findViewById(R.id.textView13);
+        subtotalTV = findViewById(R.id.subtotalNum);
+        submitB = findViewById(R.id.button); //has to be after the onCreate
+        submitB.setOnClickListener(buttonListener); //tie button listener to button
+
         // given the name of variable and the type and suffix (tv for text view - ET for edit text
         totalTV.setText(R.string.subtotalnum);
         //setting text
@@ -41,10 +58,11 @@ public class RepairOrderActivity extends AppCompatActivity {
         String ex= cs.toString(); // or put all in one below
         String value= totalTV.getText().toString();
 
+
         Random gen = new Random();
         double number = gen.nextDouble();
         String v1 = "$" + number;
-        totalTV.setText(v1);
+        subtotalTV.setText(v1);
 
         Log.i("TEXT", value);
     }
