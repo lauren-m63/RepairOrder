@@ -107,7 +107,7 @@
         app:layout_constraintTop_toBottomOf="@+id/TypeLabel1" />
 
     <EditText
-        android:id="@+id/technitanInput"
+        android:id="@+id/technicianInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="28dp"

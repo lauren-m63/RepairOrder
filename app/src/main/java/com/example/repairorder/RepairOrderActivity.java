@@ -20,11 +20,13 @@ public class RepairOrderActivity extends AppCompatActivity {
 
     double numbers = 0.00;
     Button submitB;
-
     TextView subtotalTV;
-
-    EditText laborET;
+    EditText orderET;
     EditText paintET;
+    EditText inspectionET;
+    EditText partsET;
+    EditText laborET;
+    EditText technicianET;
 
     //creating anonymous listener for submitB button - creates onClick method
     View.OnClickListener buttonListener = new View.OnClickListener() {
@@ -36,7 +38,23 @@ public class RepairOrderActivity extends AppCompatActivity {
             subtotalTV.setText(v1);
 
             String laborTypeValue = laborET.getText().toString();
+
+
             String paintTypeValue = paintET.getText().toString();
+            Double ot = Double.parseDouble(paintTypeValue);
+
+
+            String inspectionTypeValue = inspectionET.getText().toString();
+
+
+            String partTypeValue = partsET.getText().toString();
+            Double otPART = Double.parseDouble(partTypeValue);
+
+
+            String technicianTypeValue = technicianET.getText().toString();
+
+            String orderTypeValue = orderET.getText().toString();
+            Double otORDER = Double.parseDouble(orderTypeValue);
         }
     };
 
@@ -57,8 +75,14 @@ public class RepairOrderActivity extends AppCompatActivity {
         subtotalTV = findViewById(R.id.subtotalNum);
         submitB = findViewById(R.id.button); //has to be after the onCreate
         submitB.setOnClickListener(buttonListener); //tie button listener to button
-        laborET = findViewById(R.id.laborInput);
+        orderET = findViewById(R.id.orderInput);
         paintET = findViewById(R.id.PaintInput);
+        inspectionET = findViewById(R.id.InspectionInput);
+        partsET = findViewById(R.id.PartsInput);
+        laborET = findViewById(R.id.laborInput);
+        technicianET = findViewById(R.id.technicianInput);
+
+
 
         // given the name of variable and the type and suffix (tv for text view - ET for edit text
         totalTV.setText(R.string.subtotalnum);
