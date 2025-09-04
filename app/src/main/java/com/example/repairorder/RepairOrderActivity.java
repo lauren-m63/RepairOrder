@@ -1,6 +1,8 @@
 package com.example.repairorder;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,10 +10,18 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.Random;
+
 public class RepairOrderActivity extends AppCompatActivity {
 //xml is the UI frontend , java is the logic backend
+
+    double numbers = 0.00;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_repair_order);
@@ -19,6 +29,23 @@ public class RepairOrderActivity extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+
+
         });
+
+        TextView totalTV = findViewById(R.id.textView11);
+        // given the name of variable and the type and suffix (tv for text view - ET for edit text
+        totalTV.setText(R.string.subtotalnum);
+        //setting text
+        CharSequence cs = totalTV.getText(); //gives u a char sequence
+        String ex= cs.toString(); // or put all in one below
+        String value= totalTV.getText().toString();
+
+        Random gen = new Random();
+        double number = gen.nextDouble();
+        String v1 = "$" + number;
+        totalTV.setText(v1);
+
+        Log.i("TEXT", value);
     }
 }
