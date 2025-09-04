@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -22,14 +23,20 @@ public class RepairOrderActivity extends AppCompatActivity {
 
     TextView subtotalTV;
 
+    EditText laborET;
+    EditText paintET;
+
     //creating anonymous listener for submitB button - creates onClick method
     View.OnClickListener buttonListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             Random gen = new Random();
             double number = gen.nextDouble();
-            String v2 = "$" + number;
-            subtotalTV.setText(v2);
+            String v1 = "$" + number;
+            subtotalTV.setText(v1);
+
+            String laborTypeValue = laborET.getText().toString();
+            String paintTypeValue = paintET.getText().toString();
         }
     };
 
@@ -50,6 +57,8 @@ public class RepairOrderActivity extends AppCompatActivity {
         subtotalTV = findViewById(R.id.subtotalNum);
         submitB = findViewById(R.id.button); //has to be after the onCreate
         submitB.setOnClickListener(buttonListener); //tie button listener to button
+        laborET = findViewById(R.id.laborInput);
+        paintET = findViewById(R.id.PaintInput);
 
         // given the name of variable and the type and suffix (tv for text view - ET for edit text
         totalTV.setText(R.string.subtotalnum);
